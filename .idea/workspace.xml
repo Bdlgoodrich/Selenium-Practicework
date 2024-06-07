@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="da351259-2886-440b-ae28-1717c9022ee7" name="Changes" comment="Initial trial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/allTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkoutTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/checkoutTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loginTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/AccountCreatedPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/AccountCreatedPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/AccountDeletedPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/AccountDeletedPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +53,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "two.files.diff.last.used.file": "C:/Users/Andie/TestAutomationPractice/loginTests.xml"
   }
 }]]></component>
@@ -107,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717794079820</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial trial commit">
+      <option name="closed" value="true" />
+      <created>1717797261549</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717797261549</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UnknownFeatures">
