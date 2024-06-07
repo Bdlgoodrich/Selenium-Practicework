@@ -21,7 +21,8 @@ public class Utilities {
 	}
 
 	@FindBy(id="scrollUp")
-	WebElement scrollUpButton;
+	private WebElement scrollUpButton;
+
 	public void useScrollUpButton(){
 		scrollUpButton.click();
 	}
@@ -53,11 +54,13 @@ public class Utilities {
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	}
 
+	public boolean verifyTitle(String title) {
+		return driver.getTitle().contentEquals(title);
+	}
+
 	public void waitForElement(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
-
-
 
 }

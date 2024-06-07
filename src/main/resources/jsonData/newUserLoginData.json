@@ -1,0 +1,24 @@
+[
+
+{
+"title" : "Mr.",
+"password" : "password",
+"firstName" : "First",
+"lastName" : "Last",
+"email" : "newEmail@email.com",
+"day" : "1",
+"month" : "January",
+"year" : "2000",
+"newsletter" : "yes",
+"optin" : "yes",
+"company" : "company",
+"address1" : "100 Street St",
+"address2" : "apt2",
+"country" : "United States",
+"state" : "state",
+"city": "city",
+"zipcode" : "99999",
+"mobileNumber" : "9999999999"
+}
+
+]

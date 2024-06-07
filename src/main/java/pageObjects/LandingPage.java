@@ -1,6 +1,8 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LandingPage extends Header {
@@ -9,16 +11,16 @@ public class LandingPage extends Header {
 	public LandingPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
+		goToUrl();
+		if (!this.verifyTitle(title)) throw new AssertionError("Initialization of driver and landing page failed");
 		PageFactory.initElements(driver, this);
 	}
 
-	String title = "Automation Exercise";
+	public final String title = "Automation Exercise";
+	private final String url = "https://automationexercise.com/";
 
-	public boolean verifyLoggedInAsText(String name) {
-        return headerLoggedInAs.getText().contentEquals("Logged in as " + name);
+	public void goToUrl(){
+		driver.get(url);
 	}
-	
-	public boolean verifyTitle() {
-        return driver.getTitle().contentEquals(title);
-	}
+
 }

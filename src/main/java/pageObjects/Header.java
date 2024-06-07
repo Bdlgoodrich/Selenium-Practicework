@@ -16,95 +16,74 @@ public class Header extends Utilities{
 
 
     @FindBy(css = "a[href='/view_cart'")
-    WebElement headerCart;
-
+    private WebElement headerCart;
     @FindBy(css="a[href='/contact_us']")
-    WebElement headerContact;
-
+    private WebElement headerContact;
     @FindBy(css = "a[href='/delete_account']")
-    WebElement headerDelete;
-
+    private WebElement headerDelete;
     @FindBy(css = "a[href='/']")
-    protected WebElement headerHome;
-
-    @FindBy(xpath = "//i[@class='fa fa-user']/parent::a")
-    WebElement headerLoggedInAs;
-
+    private WebElement headerHome;
     @FindBy(css = "a[href='/login']")
-    WebElement headerLogin;
-
+    private WebElement headerLogin;
     @FindBy(css = "a[href='/logout']")
-    WebElement headerLogout;
-
+    private WebElement headerLogout;
     @FindBy(css = "a[href='/products']")
-    protected WebElement headerProducts;
-
+    private WebElement headerProducts;
     @FindBy(css="a[href='/test_cases']")
-    WebElement headerTestCases;
+    private WebElement headerTestCases;
+    @FindBy(xpath = "//i[@class='fa fa-user']/parent::a")
+    private WebElement headerLoggedInAs;
 
-    String expectedSubscriptionText = "SUBSCRIPTION";
-    String expectedSubmissionText = "You have been successfully subscribed!";
-
+    private String expectedSubscriptionText = "SUBSCRIPTION";
+    private String expectedSubmissionText = "You have been successfully subscribed!";
 
     @FindBy(id="subscribe")
-    WebElement subscribeButton;
-
+    private WebElement subscribeButton;
     @FindBy(id="susbscribe_email")
-    WebElement subscriptionInput;
-
+    private WebElement subscriptionInput;
     @FindBy(id="success-subscribe")
-    WebElement submissionText;
-
+    private WebElement submissionText;
     @FindBy(css=".single-widget h2")
-    WebElement subscriptionText;
+    private WebElement subscriptionText;
 
 
 
-    public void goToCart() {
+    public void headerGoToCart() {
         headerCart.click();
     }
-
-    public void goToContact() {
+    public void headerGoToContact() {
         headerContact.click();
-
     }
-
-    public void goToLogin() {
+    public void headerGoToLogin() {
         headerLogin.click();
-
     }
-
-    public void goToProducts() {
+    public void headerGoToProducts() {
         headerProducts.click();
     }
-
-    public void goToTestCases() {
+    public void headerGoToTestCases() {
         headerTestCases.click();
     }
-
     public void headerLogout() {
-        waitForElement(headerLogout);
         headerLogout.click();
     }
-
     public void headerDeleteAccount() {
         headerDelete.click();
     }
 
-    public void subscribe (String email) {
+    public void inputBannerSubscribeEmail (String email) {
         subscriptionInput.sendKeys(email);
+    }
+    public void clickBannerSubmitButton () {
         subscribeButton.click();
     }
 
-    public boolean verifySubmissionText() {
+    public boolean verifyHeaderLoggedInAsText(String name) {
+        return headerLoggedInAs.getText().contentEquals("Logged in as " + name);
+    }
+    public boolean verifyBannerSubscriptionSubmissionText() {
         return submissionText.getText().contentEquals(expectedSubmissionText);
     }
-
-    public boolean verifySubscrptionText() {
+    public boolean verifyBannerSubscribeText() {
         return subscriptionText.getText().contentEquals(expectedSubscriptionText);
-    }
-
-    public String getLoggedInText() {
-        return headerLoggedInAs.getText();
     }
 }
