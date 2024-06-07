@@ -5,37 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da351259-2886-440b-ae28-1717c9022ee7" name="Changes" comment="Initial trial commit">
-      <change afterPath="$PROJECT_DIR$/allTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkoutTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/AccountCreatedPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/AccountDeletedPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/AllProductsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/CartPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ContactPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ProductPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/RegisterPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jsonData/contactDetails.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jsonData/existingUserLoginData.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jsonData/incorrectUserLoginData.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jsonData/newUserLoginData.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginExistingUserAsNew.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginExistingUserThenLogOut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginIncorrectUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginNewUserThenDelete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/SendContactInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/VerifyProductPageDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/VerifyProductsAddedToCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/VerifySearchFeature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/VerifySubscribeBanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/VerifyTestCasesHeaderButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/allTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkoutTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/checkoutTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loginTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/LandingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Utilities.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,12 +44,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.C:/Users/Andie/TestAutomationPractice/allTests.xml.executor": "Run",
+    "TestNG.C:/Users/Andie/TestAutomationPractice/loginTests.xml.executor": "Run",
     "TestNG.LoginExistingUserAsNew.executor": "Run",
     "TestNG.LoginNewUserThenDelete.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/Andie/TestAutomationPractice/src/main/java/pageObjects",
-    "last_opened_file_path": "C:/Users/Andie/TestAutomationPractice/src/main/java",
+    "last_opened_file_path": "C:/Users/Andie/TestAutomationPractice",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -84,8 +59,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Andie\TestAutomationPractice\src\main\java" />
       <recent name="C:\Users\Andie\TestAutomationPractice" />
+      <recent name="C:\Users\Andie\TestAutomationPractice\src\main\java" />
       <recent name="C:\Users\Andie\TestAutomationPractice\src\test\java\tests" />
       <recent name="C:\Users\Andie\TestAutomationPractice\src\main\java\pageObjects" />
     </key>
@@ -124,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717694978702</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial trial commit">
+      <option name="closed" value="true" />
+      <created>1717794079820</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717794079820</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnknownFeatures">
