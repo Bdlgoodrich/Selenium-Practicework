@@ -1,10 +1,10 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
+import javax.swing.*;
 
 public class LoginPage extends Utilities{
 	WebDriver driver;
@@ -13,7 +13,6 @@ public class LoginPage extends Utilities{
 		super(driver);
 		this.driver=driver;
 		if (!this.verifyTitle(title)) throw new AssertionError("Previous step did not go to Login Page");
-		PageFactory.initElements(driver, this);
 	}
 	
 	public final String title = "Automation Exercise - Signup / Login";
@@ -22,56 +21,46 @@ public class LoginPage extends Utilities{
 	private final String expectedNewUserText = "New User Signup!";
 	private final String expectedSignupErrorText = "Email Address already exist!";
 	
-	@FindBy (css="button[data-qa='login-button']")
-	private WebElement loginButton;
-	@FindBy(css=".login-form h2")
-	private WebElement loginText;
-	@FindBy (css="input[data-qa='login-email']")
-	private WebElement userEmailInput;
-	@FindBy (name="password")
-	private WebElement userPasswordInput;
-	@FindBy (css="p[style='color: red;']")
-	private WebElement errorText;
-	@FindBy (css="input[data-qa='signup-email']")
-	private WebElement newUserEmailInput;
-	@FindBy (name="name")
-	private WebElement newUserNameInput;
-	@FindBy (css=".signup-form h2")
-	private WebElement newUserText;
-	@FindBy (css="button[data-qa='signup-button']")
-	private WebElement signupButton;
-	
-		
+	private By loginButton = By.cssSelector("button[data-qa='login-button']");
+	private By loginText = By.cssSelector(".login-form h2");
+	private By userEmailInput = By.cssSelector("input[data-qa='login-email']");
+	private By userPasswordInput = By.name("password");
+	private By errorText = By.cssSelector("p[style='color: red;']");
+	private By newUserEmailInput = By.cssSelector("input[data-qa='signup-email']");
+	private By newUserNameInput = By.name("name");
+	private By newUserText = By.cssSelector(".signup-form h2");
+	private By signupButton = By.cssSelector("button[data-qa='signup-button']");
+
 	public void inputUserLoginInfo (String email, String password){
-		userEmailInput.sendKeys(email);
-		userPasswordInput.sendKeys(password);
+		driver.findElement(userEmailInput).sendKeys(email);
+		driver.findElement(userPasswordInput).sendKeys(password);
 	}
 	public void clickLoginButton() {
-		loginButton.click();
+		driver.findElement(loginButton).click();
 	}
 	
 	public void inputNewUserInfo(String userName, String email){
-		newUserNameInput.sendKeys(userName);
-		newUserEmailInput.sendKeys(email);
+		driver.findElement(newUserNameInput).sendKeys(userName);
+		driver.findElement(newUserEmailInput).sendKeys(email);
 	}
 	public void clickSignupButton() {
-		signupButton.click();
+		driver.findElement(signupButton).click();
 	}
 
 	public boolean verifyLoginError () {
-		return errorText.getText().contentEquals(expectedLoginErrorText);
+		return driver.findElement(errorText).getText().contentEquals(expectedLoginErrorText);
 	}
 
 	public boolean verifyLoginText() {
-        return loginText.getText().contentEquals(expectedLoginText);
+        return driver.findElement(loginText).getText().contentEquals(expectedLoginText);
 	}
 
 	public boolean verifyNewUserText () {
-        return newUserText.getText().contentEquals(expectedNewUserText);
+        return driver.findElement(newUserText).getText().contentEquals(expectedNewUserText);
 	}
 
 	public boolean verifySignupErrorText() {
-        return errorText.getText().contentEquals(expectedSignupErrorText);
+        return driver.findElement(errorText).getText().contentEquals(expectedSignupErrorText);
 	}
 
 	public boolean verifyTitle() {

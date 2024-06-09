@@ -1,11 +1,8 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-import java.security.PrivateKey;
 import java.util.HashMap;
 
 public class ContactPage extends Utilities {
@@ -15,60 +12,51 @@ public class ContactPage extends Utilities {
 		super(driver);
 		this.driver = driver;
 		if (!this.verifyTitle(title)) throw new AssertionError("Previous step did not go to Cart Page");
-		PageFactory.initElements(driver, this);
 	}
 
 	public final String title = "Automation Exercise - Contact Us";
 	private final String expectedGetInTouchText = "GET IN TOUCH";
 	private final String expectedSuccessText = "Success! Your details have been submitted successfully.";
 
-	@FindBy(css = "div[class='contact-form'] h2")
-	private WebElement getInTouch;
-	@FindBy(name = "name")
-	private WebElement nameInput;
-	@FindBy(name = "email")
-	private WebElement emailInput;
-	@FindBy(name = "subject")
-	private WebElement subjectInput;
-	@FindBy(id = "message")
-	private WebElement messageInput;
-	@FindBy(name = "upload_file")
-	private WebElement fileButton;
-	@FindBy(name = "submit")
-	private WebElement submitButton;
-	@FindBy(css = ".status.alert-success")
-	private WebElement success;
-	@FindBy(className = "btn-success")
-	private WebElement homeButton;
+	private final By getInTouch = By.cssSelector("div[class='contact-form'] h2");
+	private final By nameInput = By.name("name");
+	private final By emailInput = By.name("email");
+	private final By subjectInput = By.name("subject");
+	private final By messageInput = By.id("message");
+	private final By fileButton = By.name("upload_file");
+	private final By submitButton = By.name("submit");
+	private final By success = By.cssSelector(".status.alert-success");
+	private final By homeButton = By.className("btn-success");
 
 	public void inputContactInfo(HashMap<String, String> input) {
-		scrollToElement(nameInput);
-		nameInput.sendKeys(input.get("name"));
-		emailInput.sendKeys(input.get("email"));
-		subjectInput.sendKeys(input.get("subject"));
-		messageInput.sendKeys(input.get("message"));
+		scrollToElement(driver.findElement(nameInput));
+		driver.findElement(nameInput).sendKeys(input.get("name"));
+		driver.findElement(emailInput).sendKeys(input.get("email"));
+		driver.findElement(subjectInput).sendKeys(input.get("subject"));
+		driver.findElement(messageInput).sendKeys(input.get("message"));
 	}
 
 	public void clickHomeButton() {
-		scrollToElement(homeButton);
-		homeButton.click();
+		scrollToElement(driver.findElement(messageInput));
+		driver.findElement(homeButton).click();
 	}
 
 	public void submitContactInfo() {
-		scrollToElement(getInTouch);
-		submitButton.click();
+		scrollToElement(driver.findElement(getInTouch));
+		driver.findElement(submitButton).click();
 	}
-	
+
+	//this method is incomplete at this time
 	public void uploadFile() {
-		fileButton.click();
+		driver.findElement(fileButton).click();
 	}
 
 	public boolean verifyBeInTouchText() {
-		return getInTouch.getText().contentEquals(expectedGetInTouchText);
+		return driver.findElement(fileButton).getText().contentEquals(expectedGetInTouchText);
 	}
 
 	public boolean verifySuccessText() {
-		return success.getText().contentEquals(expectedSuccessText);
+		return driver.findElement(success).getText().contentEquals(expectedSuccessText);
 	}
 
 }

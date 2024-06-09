@@ -15,14 +15,14 @@ public class AccountCreatedPage extends Utilities{
 	public final String title = "Automation Exercise - Account Created";
 	private final String expectedConfirmText ="ACCOUNT CREATED!";
 
-	private final WebElement continueButton = driver.findElement(By.cssSelector("a[data-qa='continue-button']"));
-	private final WebElement createdText = driver.findElement(By.tagName("b"));
+	private final By continueButton = By.cssSelector("a[data-qa='continue-button']");
+	private final By createdText = By.tagName("b");
 	
 	
 	public boolean verifyConfirmText() {
-		String text = createdText.getText();
+		String text = driver.findElement(createdText).getText();
 		boolean match = text.contentEquals(expectedConfirmText);
-		continueButton.click();
+		driver.findElement(continueButton).click();
 		return match;
 	}
 

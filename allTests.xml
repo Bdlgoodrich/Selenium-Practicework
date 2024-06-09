@@ -11,7 +11,7 @@
       <class name="tests.VerifyProductPageDetails"/>
       <class name="tests.VerifyProductsAddedToCart"/>
       <class name="tests.VerifySearchFeature"/>
-      <class name="tests.VerifySubscribeBanner"/>
+      <class name="tests.VerifySubscribeFooter"/>
       <class name="tests.VerifyTestCasesHeaderButton"/>
     </classes>
   </test> <!-- Test -->

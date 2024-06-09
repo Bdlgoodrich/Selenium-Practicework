@@ -3,8 +3,6 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class CartPage extends Utilities{
 
@@ -14,41 +12,43 @@ public class CartPage extends Utilities{
 		super(driver);
 		this.driver = driver;
 		if (!this.verifyTitle(title)) throw new AssertionError("Previous step did not go to Cart Page");
-		PageFactory.initElements(driver, this);
 	}
 
 	public final String title = "Automation Exercise - Checkout";
-	@FindBy (id="empty_cart")
-	private WebElement emptyCartMessage;
-	
-	public WebElement getCartProductByNumber(int i) {
+
+	private final By emptyCartMessage = By.id("empty_cart");
+	private final By productName_product = By.cssSelector("h4 a");
+	private final By productPrice_product = By.cssSelector("td[class ='cart_price'] p");
+	private final By productQuantity_product = By.tagName("button");
+
+	public WebElement getCartProductByIndex(int i) {
 		String productNumber = String.valueOf(i);
 		return driver.findElement(By.id("product-"+productNumber));
 	}
 	
 	public String getCartProductName(WebElement product){
-		return product.findElement(By.cssSelector("h4 a")).getText(); 
+		return product.findElement(productName_product).getText();
 	}
 	
 	public String getCartProductPrice(WebElement product) {
-		return product.findElement(By.cssSelector("td[class ='cart_price'] p")).getText();
+		return product.findElement(productPrice_product).getText();
 	}
 	
 	public int getCartProductQuantity (WebElement product) {
-		String productQuantity = product.findElement(By.tagName("button")).getText();
+		String productQuantity = product.findElement(productQuantity_product).getText();
 		return Integer.parseInt(productQuantity);
 	}
 
 	public String getProductNameByIndex(int i) {
-		return getCartProductName(getCartProductByNumber(i));
+		return getCartProductName(getCartProductByIndex(i));
 	}
 
 	public String getProductPriceByIndex(int i) {
-		return getCartProductPrice(getCartProductByNumber(i));
+		return getCartProductPrice(getCartProductByIndex(i));
 	}
 
 	public int getProductQuantityByIndex(int i) {
-		return getCartProductQuantity(getCartProductByNumber(i));
+		return getCartProductQuantity(getCartProductByIndex(i));
 
 	}
 

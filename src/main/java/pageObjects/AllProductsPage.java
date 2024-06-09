@@ -4,11 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 public class AllProductsPage extends Utilities{
 	WebDriver driver;
@@ -16,99 +14,93 @@ public class AllProductsPage extends Utilities{
 		super(driver);
 		this.driver=driver;
         if (!this.verifyTitle(title)) throw new AssertionError("Previous step did not go to Products Page");
-		PageFactory.initElements(driver, this);
 	}
 	public final String title = "Automation Exercise - All Products";
 	private final String expectedSearchTitleText = "SEARCHED PRODUCTS";
-	
-	@FindBy (className="productinfo")
-	private List<WebElement> allProducts;
-	@FindBy (css="button[data-dismiss='modal']")
-	private WebElement continueButton;
-	@FindBy (id="submit_search")
-	private WebElement searchButton;
-	@FindBy (id="search_product")
-	private WebElement searchInput;
-	@FindBy (css=".title.text-center")
-	private WebElement searchTitleText;
-	@FindBy (css="a[href='/view_cart'] u")
-	private WebElement viewCartButton;
-	@FindBy (css=".choose a")
-	private WebElement viewFirstProductButton;
+
+	private final By allProducts = By.className("productinfo");
+	private final By continueButton = By.cssSelector("button[data-dismiss='modal']");
+	private final By searchButton = By.id("submit_search");
+	private final By searchInput = By.id("search_product");
+	private final By searchTitleText = By.cssSelector(".title.text-center");
+	private final By viewCartButton = By.cssSelector("a[href='/view_cart'] u");
+	private final By viewFirstProductButton = By.cssSelector(".choose a");
+
+	private final By addToCart_product = By.cssSelector(".btn.btn-default.add-to-cart");
+	private final By productName_product = By.tagName("p");
+	private final By productPrice_product= By.tagName("h2");
 
 	public void addProductToCartByIndex (int number) {
-		addProductToCart(allProducts.get(number-1));
+		addProductToCart(getAllProducts().get(number-1));
 	}
 	
 	public void addProductToCart(WebElement product) {
-		scrollToElement(allProducts.getFirst());
+		scrollToElement(product);
 		Actions a = new Actions(driver);
-		WebElement addToCartButton = product.findElement(By.cssSelector(".btn.btn-default.add-to-cart"));
+		WebElement addToCartButton = product.findElement(addToCart_product);
 		a.moveToElement(addToCartButton).click().moveToLocation(0, 0).build().perform();
 	}
 	
 	public void clickContinueShopping() {
-		continueButton.click();
+		waitForElement(driver.findElement(continueButton));
+		driver.findElement(continueButton).click();
 	}
 	
-	public List<WebElement> getProductList (){
-		return driver.findElements(By.className("productinfo"));
+	public List<WebElement> getAllProducts (){
+		return driver.findElements(allProducts);
 	}
 	public String getProductName(WebElement product){
-		WebElement productName = product.findElement(By.tagName("p"));
+		WebElement productName = product.findElement(productName_product);
 		return productName.getText();
 	}
 	public List<String> getProductsNames (List<WebElement> products){
-		return products.stream().map(this::getProductName).collect(Collectors.toList());
+		return products.stream().map(this::getProductName).toList();
 	}
 	public String getProductPrice(WebElement product) {
-		WebElement productPrice = product.findElement(By.tagName("h2"));
-		return productPrice.getText();
+		return product.findElement(productPrice_product).getText();
 	}
-	public int getProductQuantity (WebElement product) {
-		return 1;
-	}
+//	 public int getProductQuantity (WebElement product) {
+//		return 1;
+//	}
 	
 	public String getProductNameByIndex(int i) {
-		return getProductName(allProducts.get(i-1));
+		return getProductName(driver.findElements(allProducts).get(i-1));
 	}
 	public String getProductPriceByIndex(int i) {
-		return getProductPrice(allProducts.get(i-1));
-	}
-
-	public int getIndexedProductQuantity(int i) {
-		return getProductQuantity(allProducts.get(i-1));
+		return getProductPrice(driver.findElements(allProducts).get(i-1));
 	}
 
 	public void searchForProduct (String term) {
-		searchInput.sendKeys(term);
-		searchButton.click();
+		driver.findElement(searchInput).sendKeys(term);
+		driver.findElement(searchButton).click();
 	}
 	
 	public boolean verifyProductsPresent() {
-		return !allProducts.isEmpty();
+		return !driver.findElements(allProducts).isEmpty();
 	}
-	
+
+	//filters visible elements by search term and compares results
+	//will not determine if products containing term were missed
 	public boolean verifySearch (String term) {
-		List<WebElement> searchProducts = getProductList();
-		List<String> allProductNames= getProductsNames(allProducts);
-		List<String> searchProductNames = getProductsNames(searchProducts);
-        return allProductNames.equals(searchProductNames);
+		List<String> allProductNames= getProductsNames(driver.findElements(allProducts));
+		if (allProductNames.isEmpty()) return false;
+		List<String> filteredNames = allProductNames.stream().filter(p -> p.contains(term)).toList();
+        return allProductNames.equals(filteredNames);
 	}
 	
 	public boolean verifySearchText() {
-		return searchTitleText.getText().contentEquals(expectedSearchTitleText);
+		return driver.findElement(searchTitleText).getText().contentEquals(expectedSearchTitleText);
 	}
 	
 	public void viewCart() {
-		waitForElement(viewCartButton);
-		viewCartButton.click();
+		waitForElement(driver.findElement(viewCartButton));
+		driver.findElement(viewCartButton).click();
 	}
 	
 	public void viewFirstProduct () {
-		waitForElement(viewFirstProductButton);
-		scrollToElement(viewFirstProductButton);
-		viewFirstProductButton.click();
+		waitForElement(driver.findElement(viewFirstProductButton));
+		scrollToElement(driver.findElement(viewFirstProductButton));
+		driver.findElement(viewFirstProductButton).click();
 	}
 
 }

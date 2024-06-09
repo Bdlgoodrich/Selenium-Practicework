@@ -1,9 +1,7 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class ProductPage extends Utilities {
 	WebDriver driver;
@@ -12,49 +10,40 @@ public class ProductPage extends Utilities {
 		super(driver);
 		this.driver = driver;
 		if (!this.verifyTitle(title)) throw new AssertionError("Previous step did not go to Product Page");
-		PageFactory.initElements(driver, this);
 	}
 
 	public final String title = "Automation Exercise - Product Details";
 
-	@FindBy(css = ".product-information button")
-	private WebElement addToCartButton;
-	@FindBy(xpath = "//b[text() = 'Availability:']/..")
-	private WebElement productAvailability;
-	@FindBy(xpath = "//b[text() = 'Brand:']/..")
-	private WebElement productBrand;
-	@FindBy(css = ".product-information p")
-	private WebElement productCategory;
-	@FindBy(xpath = "//b[text() = 'Condition:']/..")
-	private WebElement productCondition;
-	@FindBy(css = ".product-information h2")
-	private WebElement productName;
-	@FindBy(css = ".product-information span span")
-	private WebElement productPrice;
-	@FindBy(css = ".product-information span input[id='quantity']")
-	private WebElement productQuantity;
+	private final By addToCartButton = By.cssSelector(".product-information button");
+	private final By productAvailability = By.xpath("//b[text() = 'Availability:']/..");
+	private final By productBrand = By.xpath("//b[text() = 'Brand:']/..");
+	private final By productCategory = By.cssSelector(".product-information p");
+	private final By productCondition = By.xpath("//b[text() = 'Condition:']/..");
+	private final By productName = By.className(".product-information h2");
+	private final By productPrice = By.cssSelector(".product-information span span");
+	private final By productQuantity = By.cssSelector(".product-information span input[id='quantity']");
 
 	public boolean containsProductAvailability() {
-		String Avail = productAvailability.getText().replace("Availability:", "");
+		String Avail = driver.findElement(productAvailability).getText().replace("Availability:", "");
 		return !Avail.isBlank();
 	}
 	public boolean containsProductBrand() {
-		String brand = productBrand.getText().replace("Brand:", "");
+		String brand = driver.findElement(productBrand).getText().replace("Brand:", "");
 		return !brand.isBlank();
 	}
 	public boolean containsProductCategory() {
-		String category = productCategory.getText().replace("Category:", "");
+		String category = driver.findElement(productCategory).getText().replace("Category:", "");
 		return !category.isBlank();
 	}
 	public boolean containsProductCondition() {
-		String condition = productCondition.getText().replace("Condition:", "");
+		String condition = driver.findElement(productCondition).getText().replace("Condition:", "");
 		return !condition.isBlank();
 	}
 	public boolean containsProductName() {
-		return !productName.getText().isBlank();
+		return !driver.findElement(productName).getText().isBlank();
 	}
 	public boolean containsProductPrice() {
-		String price = productPrice.getText().replace("Rs.", "");
+		String price = driver.findElement(productPrice).getText().replace("Rs.", "");
 		return !price.isBlank();
 	}
 

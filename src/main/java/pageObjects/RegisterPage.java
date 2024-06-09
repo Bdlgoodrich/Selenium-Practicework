@@ -1,9 +1,7 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.HashMap;
@@ -14,101 +12,78 @@ public class RegisterPage extends Utilities{
 		super(driver);
 		this.driver=driver;
 		if (!this.verifyTitle(title)) throw new AssertionError("Previous step did not go to Registration Page");
-		PageFactory.initElements(driver, this); 
 	}
 
 	public final String title = "Automation Exercise - Signup";
 	private final String expectedSignupText = "ENTER ACCOUNT INFORMATION";
 	
-	@FindBy(tagName="h2")
-	private WebElement signupText;
-	@FindBy(id="uniform-id_gender1")
-	private WebElement titleMrButton;
-	@FindBy(id="uniform-id_gender2")
-	private WebElement titleMrsButton;
-	@FindBy (id="name")
-	private WebElement nameInput;
-	@FindBy (id="password")
-	private WebElement passwordInput;
-	@FindBy (id="days")
-	private WebElement daySelector;
-	@FindBy (id="months")
-	private WebElement monthSelector;
-	@FindBy (id="years")
-	private WebElement yearSelector;
-	@FindBy (id="newsletter")
-	private WebElement newsButton;
-	@FindBy (id="optin")
-	private WebElement optinButton;
-	@FindBy (id="first_name")
-	private WebElement firstNameInput;
-	@FindBy (id="last_name")
-	private WebElement lastNameInput;
-	@FindBy (id="company")
-	private WebElement companyInput;
-	@FindBy (id="address1")
-	private WebElement address1Input;
-	@FindBy (id="address2")
-	private WebElement address2Input;
-	@FindBy (id="country")
-	private WebElement countriesSelector;
-	@FindBy (id="state")
-	private WebElement stateInput;
-	@FindBy (id="city")
-	private WebElement cityInput;
-	@FindBy (id="zipcode")
-	private WebElement zipcodeInput;
-	@FindBy (id="mobile_number")
-	private WebElement mobileInput;
-	@FindBy (css="button[data-qa='create-account']")
-	private WebElement createAccountButton;
-
+	private final By signupText = By.tagName("h2");
+	private final By titleMrButton = By.id("uniform-id_gender1");
+	private final By titleMrsButton = By.id("uniform-id_gender2");
+	private final By nameInput = By.id("name");
+	private final By passwordInput = By.id("password");
+	private final By daySelector = By.id("days");
+	private final By monthSelector = By.id("months");
+	private final By yearSelector = By.id("years");
+	private final By newsButton = By.id("newsletter");
+	private final By optinButton = By.id("optin");
+	private final By firstNameInput = By.id("first_name");
+	private final By lastNameInput = By.id("last_name");
+	private final By companyInput = By.id("company");
+	private final By address1Input = By.id("address1");
+	private final By address2Input = By.id("address2");
+	private final By countriesSelector = By.id("country");
+	private final By stateInput = By.id("state");
+	private final By cityInput = By.id("city");
+	private final By zipcodeInput = By.id("zipcode");
+	private final By mobileInput = By.id("mobile_number");
+	private final By createAccountButton = By.cssSelector("button[data-qa='create-account']");
 
 	public void clickCreateAccountButton () {
-		waitForElement(createAccountButton);
-		createAccountButton.click();
+		waitForElement(driver.findElement(createAccountButton));
+		driver.findElement(createAccountButton).click();
 	}
 	
 	public void InputNewUserInfo (HashMap<String, String> input) {
 		if (input.get("title").equalsIgnoreCase("Mr.")) {
-			waitForElement(titleMrButton);
-			titleMrButton.click();
+			waitForElement(driver.findElement(titleMrButton));
+			driver.findElement(titleMrButton).click();
 		}
 		else if (input.get("title").equalsIgnoreCase("Mrs.")) {
-			waitForElement(titleMrsButton);
-			titleMrsButton.click();
+			waitForElement(driver.findElement(titleMrsButton));
+			driver.findElement(titleMrsButton).click();
 		}
 		
-		passwordInput.sendKeys(input.get("password"));
-		Select day = new Select(daySelector);
+		driver.findElement(passwordInput).sendKeys(input.get("password"));
+		Select day = new Select(driver.findElement(daySelector));
 		day.selectByVisibleText(input.get("day"));
-		Select month = new Select(monthSelector);
+		Select month = new Select(driver.findElement(monthSelector));
 		month.selectByVisibleText(input.get("month"));
-		Select year = new Select(yearSelector);
+		Select year = new Select(driver.findElement(yearSelector));
 		year.selectByVisibleText(input.get("year"));
-		scrollToElement(newsButton);
+		scrollToElement(driver.findElement(newsButton));
 		if (input.get("newsletter").equalsIgnoreCase("yes")) {
-			newsButton.click();
+			driver.findElement(newsButton).click();
 		}
 		if (input.get("optin").equalsIgnoreCase("yes")) {
-			optinButton.click();
+			driver.findElement(optinButton).click();
 		}
-		firstNameInput.sendKeys(input.get("firstName"));
-		lastNameInput.sendKeys(input.get("lastName"));
-		companyInput.sendKeys(input.get("company"));
-		address1Input.sendKeys(input.get("address1"));
-		scrollToElement(address2Input);
-		address2Input.sendKeys(input.get("address2"));
-		Select country = new Select(countriesSelector);
+		driver.findElement(firstNameInput).sendKeys(input.get("firstName"));
+		driver.findElement(lastNameInput).sendKeys(input.get("lastName"));
+		driver.findElement(companyInput).sendKeys(input.get("company"));
+		driver.findElement(address1Input).sendKeys(input.get("address1"));
+		scrollToElement(driver.findElement(address2Input));
+		driver.findElement(address2Input).sendKeys(input.get("address2"));
+		Select country = new Select(driver.findElement(countriesSelector));
 		country.selectByVisibleText(input.get("country"));
-		stateInput.sendKeys(input.get("state"));
-		cityInput.sendKeys(input.get("city"));
-		zipcodeInput.sendKeys(input.get("zipcode"));
-		mobileInput.sendKeys(input.get("mobileNumber"));
+		driver.findElement(stateInput).sendKeys(input.get("state"));
+		driver.findElement(cityInput).sendKeys(input.get("city"));
+		driver.findElement(zipcodeInput).sendKeys(input.get("zipcode"));
+		driver.findElement(mobileInput).sendKeys(input.get("mobileNumber"));
 	}
 	
 	public boolean verifySignupText() {
-        return signupText.getText().contentEquals(expectedSignupText);
+        return driver.findElement(signupText).getText().contentEquals(expectedSignupText);
 	}
 	
 }

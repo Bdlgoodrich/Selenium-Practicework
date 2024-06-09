@@ -17,15 +17,13 @@ public class AccountDeletedPage extends Utilities{
 	public final String title = "Automation Exercise - Account Created";
 	private final String confirmText = "ACCOUNT DELETED!";
 
-	private final WebElement accountDeletedText = driver.findElement(By.tagName("b"));
-	
-//	@FindBy (css="a[data-qa='continue-button']")
-	private final WebElement continueButton = driver.findElement(By.cssSelector("a[data-qa='continue-button']"));
+	private final By accountDeletedText = By.tagName("b");
+	private final By continueButton = By.cssSelector("a[data-qa='continue-button']");
 
 	public boolean verifyConfirmText(WebDriver driver) {
-		String text = accountDeletedText.getText();
+		String text = driver.findElement(accountDeletedText).getText();
 		boolean match = text.contentEquals(confirmText);
-		continueButton.click();
+		driver.findElement(continueButton).click();
 		return match;
 	}
 	

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pageObjects.CartPage;
 import pageObjects.LandingPage;
 
-public class VerifySubscribeBanner extends BaseTest{
+public class VerifySubscribeFooter extends BaseTest{
 	@Test
 	public void subscribeFromLanding() {
 		String email = "email@email.com";
@@ -16,19 +16,19 @@ public class VerifySubscribeBanner extends BaseTest{
 
 //		Verify email subscription feature works from landing page
 		landingPage.scrollToBottom();
-		Assert.assertTrue(landingPage.verifyBannerSubscribeText());
-		landingPage.inputBannerSubscribeEmail(email);
-		landingPage.clickBannerSubmitButton();
-		Assert.assertTrue(landingPage.verifyBannerSubscriptionSubmissionText());
+		Assert.assertTrue(landingPage.verifyFooterSubscribeText());
+		landingPage.inputFooterSubscribeEmail(email);
+		landingPage.clickFooterSubmitButton();
+		Assert.assertTrue(landingPage.verifyFooterSubscriptionSubmissionText());
 
 //		Verify email subscription feature works from cart page
 		landingPage.headerGoToCart();
 		CartPage cartPage = new CartPage(driver);
 		cartPage.scrollToBottom();
-		Assert.assertTrue(landingPage.verifyBannerSubscribeText());
-		landingPage.inputBannerSubscribeEmail(email);
-		landingPage.clickBannerSubmitButton();
-		Assert.assertTrue(landingPage.verifyBannerSubscriptionSubmissionText());
+		Assert.assertTrue(landingPage.verifyFooterSubscribeText());
+		landingPage.inputFooterSubscribeEmail(email);
+		landingPage.clickFooterSubmitButton();
+		Assert.assertTrue(landingPage.verifyFooterSubscriptionSubmissionText());
 		driver.close();
 	}
 
