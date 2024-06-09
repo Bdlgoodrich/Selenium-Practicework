@@ -19,7 +19,7 @@ public class ProductPage extends Utilities {
 	private final By productBrand = By.xpath("//b[text() = 'Brand:']/..");
 	private final By productCategory = By.cssSelector(".product-information p");
 	private final By productCondition = By.xpath("//b[text() = 'Condition:']/..");
-	private final By productName = By.className(".product-information h2");
+	private final By productName = By.cssSelector(".product-information h2");
 	private final By productPrice = By.cssSelector(".product-information span span");
 	private final By productQuantity = By.cssSelector(".product-information span input[id='quantity']");
 

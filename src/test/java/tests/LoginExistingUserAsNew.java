@@ -24,15 +24,28 @@ public class LoginExistingUserAsNew extends BaseTest {
 	@Test (dataProvider= "existingUserLoginData")
 	public void LoginExistingUserAsNew(HashMap<String,String> input){
 
-		WebDriver driver = initializeDriver();
-		LandingPage landingPage = new LandingPage(driver);
-		landingPage.headerGoToLogin();
+		WebDriver driver = null;
+		LoginPage loginPage = null;
+		try {
+			driver = initializeDriver();
+			LandingPage landingPage = new LandingPage(driver);
+			landingPage.headerGoToLogin();
+			loginPage = new LoginPage(driver);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 
-		LoginPage loginPage = new LoginPage(driver);
-		Assert.assertTrue(loginPage.verifyNewUserText());
-		loginPage.inputNewUserInfo(input.get("name"), input.get("email"));
-		loginPage.clickSignupButton();
-		Assert.assertTrue(loginPage.verifySignupErrorText());
-		driver.close();
+		try {
+			Assert.assertTrue(loginPage.verifyNewUserText());
+			loginPage.inputNewUserInfo(input.get("name"), input.get("email"));
+			loginPage.clickSignupButton();
+			Assert.assertTrue(loginPage.verifySignupErrorText());
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+
+		finally {
+			driver.close();
+		}
 	}
 }

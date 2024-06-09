@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="TestAutomationPractice" parallel="classes" thread-count="5">
+  <listeners>
+    <listener class-name="Listeners.ListenersForReportListener"/>
+    <listener class-name="ExecutionListener"/>
+    <listener class-name="Listeners.ReportListener"/>
+  </listeners>
   <test name="AllTestCases" thread-count="5" >
     <classes>
       <class name="tests.VerifyProductsAddedToCart"/>

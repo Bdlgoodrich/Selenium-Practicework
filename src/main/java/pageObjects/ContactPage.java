@@ -18,7 +18,7 @@ public class ContactPage extends Utilities {
 	private final String expectedGetInTouchText = "GET IN TOUCH";
 	private final String expectedSuccessText = "Success! Your details have been submitted successfully.";
 
-	private final By getInTouch = By.cssSelector("div[class='contact-form'] h2");
+	private final By getInTouchText = By.cssSelector("div[class='contact-form'] h2");
 	private final By nameInput = By.name("name");
 	private final By emailInput = By.name("email");
 	private final By subjectInput = By.name("subject");
@@ -37,12 +37,13 @@ public class ContactPage extends Utilities {
 	}
 
 	public void clickHomeButton() {
+		waitForElement(driver.findElement(messageInput));
 		scrollToElement(driver.findElement(messageInput));
 		driver.findElement(homeButton).click();
 	}
 
 	public void submitContactInfo() {
-		scrollToElement(driver.findElement(getInTouch));
+		scrollToElement(driver.findElement(getInTouchText));
 		driver.findElement(submitButton).click();
 	}
 
@@ -51,8 +52,8 @@ public class ContactPage extends Utilities {
 		driver.findElement(fileButton).click();
 	}
 
-	public boolean verifyBeInTouchText() {
-		return driver.findElement(fileButton).getText().contentEquals(expectedGetInTouchText);
+	public boolean verifyGetInTouchText() {
+		return driver.findElement(getInTouchText).getText().contentEquals(expectedGetInTouchText);
 	}
 
 	public boolean verifySuccessText() {

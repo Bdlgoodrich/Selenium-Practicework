@@ -28,7 +28,7 @@ public class SendContactInfo extends BaseTest{
 		landingPage.headerGoToContact();
 
 		ContactPage contactPage = new ContactPage(driver);
-		Assert.assertTrue(contactPage.verifyBeInTouchText());
+		Assert.assertTrue(contactPage.verifyGetInTouchText());
 		contactPage.inputContactInfo(contactInfo);
 		contactPage.submitContactInfo();
 		contactPage.acceptAlert();

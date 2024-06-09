@@ -5,21 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da351259-2886-440b-ae28-1717c9022ee7" name="Changes" comment="PageFactory failed commit">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Listeners/ListenersForReportListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Listeners/ReportListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/Retry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/ThisTestIsFlaky.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/allTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/allTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/AccountCreatedPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/AccountCreatedPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/AccountDeletedPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/AccountDeletedPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkoutTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cartTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loginTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/AllProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/AllProductsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/CartPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ContactPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ContactPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/LandingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/RegisterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/Utilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/VerifySubscribeBanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/VerifySubscribeBanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginExistingUserAsNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginExistingUserAsNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SendContactInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SendContactInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/VerifySubscribeBanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/VerifySubscribeFooter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -36,8 +38,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Bdlgoodrich&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Bdlgoodrich/Selenium-Practicework&quot;,
+    &quot;accountId&quot;: &quot;02d4e3e3-7d56-47bc-9f63-cc8fa38aaa81&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/pageObjects/ProductsPage.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="C:\Users\Andi" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="printErrorStackTraces" value="true" />
+        <option name="useMavenConfig" value="false" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -48,26 +72,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TestNG.C:/Users/Andie/TestAutomationPractice/allTests.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.C:/Users/Andie/TestAutomationPractice/loginTests.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginExistingUserAsNew.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginNewUserThenDelete.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/Andie/TestAutomationPractice/src/main/java/pageObjects&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Andie/TestAutomationPractice&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/Andie/TestAutomationPractice/loginTests.xml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.C:/Users/Andi/IdeaProjects/Selenium-Practicework/allTests.xml.executor": "Run",
+    "TestNG.C:/Users/Andi/IdeaProjects/Selenium-Practicework/cartTests.xml.executor": "Run",
+    "TestNG.C:/Users/Andie/TestAutomationPractice/allTests.xml.executor": "Run",
+    "TestNG.C:/Users/Andie/TestAutomationPractice/loginTests.xml.executor": "Run",
+    "TestNG.LoginExistingUserAsNew.executor": "Run",
+    "TestNG.LoginNewUserThenDelete.executor": "Run",
+    "TestNG.VerifySearchFeature.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/Andi/IdeaProjects/Selenium-Practicework/src/test/java/Listeners",
+    "last_opened_file_path": "C:/Users/Andie/TestAutomationPractice",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
+    "two.files.diff.last.used.file": "C:/Users/Andie/TestAutomationPractice/loginTests.xml"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Andie\TestAutomationPractice" />
@@ -76,22 +103,18 @@
       <recent name="C:\Users\Andie\TestAutomationPractice\src\main\java\pageObjects" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Andi\IdeaProjects\Selenium-Practicework\src\test\java" />
       <recent name="C:\Users\Andie\TestAutomationPractice\src\main\resources" />
       <recent name="C:\Users\Andie\TestAutomationPractice\src\main\java\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Listeners" />
+      <recent name="tests" />
       <recent name="pageObjects" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="pageObjects" />
     </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -146,5 +169,21 @@
     <MESSAGE value="Initial trial commit" />
     <MESSAGE value="PageFactory failed commit" />
     <option name="LAST_COMMIT_MESSAGE" value="PageFactory failed commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/tests/VerifyProductPageDetails.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/tests/VerifyProductPageDetails.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

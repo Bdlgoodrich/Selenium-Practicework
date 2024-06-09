@@ -23,7 +23,7 @@ public class BaseTest {
 	protected final String incorrectUserLoginDataLocation = System.getProperty("user.dir")+"\\src\\main\\resources\\jsonData\\incorrectUserLoginData.json";
 
 	public WebDriver initializeDriver() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Andi\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-popup-blocking");
 		options.addArguments("--disable-notifications");

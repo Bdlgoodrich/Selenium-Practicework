@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class AllProductsPage extends Utilities{
@@ -82,10 +83,12 @@ public class AllProductsPage extends Utilities{
 	//filters visible elements by search term and compares results
 	//will not determine if products containing term were missed
 	public boolean verifySearch (String term) {
+		String lowerCaseTerm = term.toLowerCase();
 		List<String> allProductNames= getProductsNames(driver.findElements(allProducts));
 		if (allProductNames.isEmpty()) return false;
-		List<String> filteredNames = allProductNames.stream().filter(p -> p.contains(term)).toList();
-        return allProductNames.equals(filteredNames);
+		List<String> lowerCaseAllProductNames = allProductNames.stream().map(p->p.toLowerCase()).collect(Collectors.toList());
+		List<String> filteredNames = lowerCaseAllProductNames.stream().filter(p -> p.contains(lowerCaseTerm)).collect(Collectors.toList());
+        return lowerCaseAllProductNames.equals(filteredNames);
 	}
 	
 	public boolean verifySearchText() {
